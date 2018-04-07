@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class BookController extends Controller
 {
-    //
     public function __construct()
     {
         $this->middleware('auth');
@@ -14,11 +13,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin');
+        return view('book');
     }
 
-    public function edit()
-    {
-        return view('admin-edit');
-    }
 }

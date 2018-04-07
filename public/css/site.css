@@ -1,3 +1,7 @@
 .item-detail {
     text-align: center;
 }
+
+#button-admin-edit {
+    float:right;
+}

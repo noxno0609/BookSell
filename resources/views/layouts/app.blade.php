@@ -46,19 +46,34 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Hello, {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }} <span class="caret"></span>
+                                    @if(Auth::user()->isAdmin())
+                                        Hello, Admin {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }} 
+                                    @else Hello, {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }} 
+                                    @endif <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ route('admin') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('admin-page-form').submit();">
+                                        {{ __('Admin Panel') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <form id="admin-page-form" action="{{ route('admin') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
                                 </div>
                             </li>
                         @endguest

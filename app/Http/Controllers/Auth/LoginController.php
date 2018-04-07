@@ -38,27 +38,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-    public function LoginGet() {
-        return view('login');
-    }
-
-    public function LoginPost(LoginRequest $request)
-    {
-        $login = array (
-            'username' => $request->username,
-            'password' -> $request->password,
-        );
-        
-        if($this->auth->attemp($login))
-        {
-            echo 'Redirect to homepage';
-        }
-        else
-        {        
-            return Redirect::to('login');
-        }
-    }
-
-    
 }

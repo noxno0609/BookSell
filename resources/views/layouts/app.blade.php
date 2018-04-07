@@ -54,9 +54,7 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="{{ route('admin') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('admin-page-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('admin') }}">
                                         {{ __('Admin Panel') }}
                                     </a>
 
@@ -65,10 +63,6 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
-                                    <form id="admin-page-form" action="{{ route('admin') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
                                     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

@@ -5,16 +5,11 @@
     <div class="row">
         <div class="col-md-4">
     
-            <div class="portrait" style="width:100%; height:80%;">
-                @if($book->imagename == null)
+            <div class="portrait" style="width:100%; height:80%;"> 
                 <img src="{{ asset('images/image-not-found.jpg')}}" width="100%" height="100%"/>
-                @else
-                <img src="{{ asset('uploads/'.$book->imagename) }}" width="100%" height="100%"/>
-                @endif
             </div> 
-
             <p>
-            <form action="{{ route('fileupload', $book->id) }}" enctype="multipart/form-data" method="POST">
+            <form action="" enctype="multipart/form-data" method="POST">
                 {{ csrf_field() }}
                 <input type="file" id="bookFile" name="bookimage" required="true" onchange="this.form.submit();" style="display: none;">
                 <input class="btn btn-primary" style="width:100%" type="button" name="buttonFileUpload"value="Change Book Image" onclick="document.getElementById('bookFile').click();">
@@ -23,30 +18,30 @@
             
         </div>
 
-        <form class="col-md-8" action="{{ route('admin.update', $book->id)}}" method="PUT">
+        <form class="col-md-8" action="" method="PUT">
             <p>
                 <label for="title">Title</label>
-                <input class="form-control" type="text" name="title" value="{{$book->title}}">
+                <input class="form-control" type="text" name="title" value="">
             </p>
 
             <p>
                 <label for="description">Description</label>
-                <textarea class="form-control" name="description">{{$book->description}}</textarea>
+                <textarea class="form-control" name="description"></textarea>
             </p>
 
             <p>
                 <label for="author">Author</label>
-                <input class="form-control" type="text" name="author" value="{{$book->author}}">
+                <input class="form-control" type="text" name="author" value="">
             </p>
 
             <p>
                 <label for="price">Price</label>
-                <input class="form-control" type="text" name="price" value="{{$book->price}}">
+                <input class="form-control" type="text" name="price" value="">
             </p>
 
             <p>
                 <label for="producer">Producer</label>
-                <input class="form-control" type="text" name="producer" value="{{$book->producer}}">
+                <input class="form-control" type="text" name="producer" value="">
             </p>
 
             <div id="button-admin-edit">

@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h3>Admin Page</h3>
+    <input class="btn btn-primary" type="button" value="Add" />
     <table class="table table-condensed">
         <thead>
         <tr>

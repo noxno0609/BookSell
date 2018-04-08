@@ -26,3 +26,5 @@ Route::get("/home/{id}", "HomeController@detail")->name('book');
 Route::post('/admin/upload/{id}','AdminController@fileupload')->name('fileupload');
 
 Route::get('/book', 'BookController@index')->name('book');
+
+Route::get('/shoppingcart', 'ShoppingCart@index')->name('shoppingcart');

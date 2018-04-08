@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="item-detail"><h2 style="color:red">{{$book->title}}</h2></div>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -14,12 +13,15 @@
                 @endif
             </div>            
         </div>
-
+ 
         <div class="col-md-8">
-            <p><b>Description: {{$book->description}}</b></p>
-            <p><b>Author: {{$book->author}}</b></p>
-            <p><b>Producer: {{$book->producer}}</b></p>
-            <p><b>Price: {{number_format($book->price, 0)}} VNĐ</b></p>
+            <h2 style="color:red"><b>{{$book->title}}</b></h2>
+            <p><b style="font-size:25px;color: #ff8533;">{{$book->author}}</b></p>
+            <p><h4 style="color:green;">{{number_format($book->price, 0)}} VNĐ</h4></p>
+            <p><b style="font-size:20px">{{$book->producer}}</b></p>
+            <p><i style="font-size:20px"> {{$book->description}}</i></p>
+            
+            
             <div id="button-book">
                 <input type="submit" name="btn" value="Add To Cart" class="btn btn-primary">
             </div> 

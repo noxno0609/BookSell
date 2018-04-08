@@ -27,4 +27,4 @@ Route::post('/admin/upload/{id}','AdminController@fileupload')->name('fileupload
 
 Route::get('/book', 'BookController@index')->name('book');
 
-Route::get('/shoppingcart', 'ShoppingCart@index')->name('shoppingcart');
+Route::get('/shoppingcart', 'ShoppingCartController@index')->name('shoppingcart');

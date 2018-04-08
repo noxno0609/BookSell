@@ -50,7 +50,7 @@
 
                 <p>
                     <label for="price">Price</label>
-                    <input class="form-control" type="text" name="price" value="">
+                    <input class="form-control" type="number" name="price" value="">
                 </p>
 
                 <p>

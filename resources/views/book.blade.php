@@ -16,14 +16,14 @@
  
         <div class="col-md-8">
             <h2 style="color:red"><b>{{$book->title}}</b></h2>
-            <p><b style="font-size:25px;color: #ff8533;">{{$book->author}}</b></p>
-            <p><h4 style="color:green;">{{number_format($book->price, 0)}} VNĐ</h4></p>
+            <p><b style="font-size:25px;color: green;">{{$book->author}}</b></p>
+            <p><h4 style="color:#b37700;">{{number_format($book->price, 0)}} VNĐ</h4></p>
             <p><b style="font-size:20px">{{$book->producer}}</b></p>
             <p><i style="font-size:20px"> {{$book->description}}</i></p>
             
             
             <div id="button-book">
-                <input type="submit" name="btn" value="Add To Cart" class="btn btn-primary">
+                <input type="submit" name="btn" value="Add To Cart" class="btn btn-primary" onclick="window.location='{{route('addtocart', $book->id)}}'">
             </div> 
         </div>
     </div>

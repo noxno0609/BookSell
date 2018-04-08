@@ -41,7 +41,7 @@
 
             <p>
                 <label for="price">Price</label>
-                <input class="form-control" type="text" name="price" value="{{$book->price}}">
+                <input class="form-control" type="number" name="price" value="{{$book->price}}">
             </p>
 
             <p>

@@ -46,10 +46,10 @@
 
         </tbody>
 
-        </table>
+    </table>
 
-        <div style="text-align:center; margin: auto; width: 100%;">
-            {{ $books->links() }}
-        </div>
+    <div style="text-align:center; margin: auto; width: 100%;">
+        {{ $books->links() }}
     </div>
+</div>
 @endsection

@@ -47,7 +47,9 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
-                        <input class="btn btn-success" type="button"  value="Shopping Cart"/>
+                        <?php $totalCart = (Session::get('cart') != null) ? Session::get('cart')->totalQuantity : 0; ?>
+
+                        <input class="btn btn-success" type="button" onclick="window.location='{{route('shoppingcart')}}'"  value="Shopping Cart ({{ $totalCart }})"/>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if(Auth::user()->isAdmin())
@@ -58,9 +60,11 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+                                     @if(Auth::user()->isAdmin())
                                     <a class="dropdown-item" href="{{ route('admin.index') }}">
                                         {{ __('Admin Panel') }}
                                     </a>
+                                    @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

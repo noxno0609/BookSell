@@ -18,17 +18,32 @@ class AdminController extends Controller
 
     public function index()
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         $books = Book::paginate(5);
         return view('admin.index', compact('books'));
     }
 
     public function create()
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         return view('admin.create');
     }
     
     public function store()
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         $book = new Book;
         $book->title = Input::get('title');
         $book->description = Input::get('description');
@@ -54,12 +69,22 @@ class AdminController extends Controller
 
     public function edit($id)
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         $book = Book::find($id);
         return view('admin.edit', compact('book'));
     }
 
     public function show($id)
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         $btSave = Input::get('btnSave');
         if (isset($btSave))
         {
@@ -71,6 +96,11 @@ class AdminController extends Controller
 
     public function destroy($id)
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         $book = Book::find($id);
         $book->delete();
         return redirect('admin');
@@ -78,6 +108,11 @@ class AdminController extends Controller
 
     public function fileupload($id)
     {
+        if(!Auth::user()->isAdmin())
+        {
+            return redirect('home');
+        }
+
         if (Input::hasFile('bookimage'))
         {
             $book = Book::find($id);

@@ -18,7 +18,10 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('producer');
-            $table->string('description');
+            $table->string('price');
+            $table->string('description', 1000);
+            $table->string('imagename');
+            $table->string('createduserid');
             $table->timestamps();
         });
     }

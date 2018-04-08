@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 //Route::post('login', 'LoginController@LoginPost');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'AdminController@index')->name('admin');
 
-Route::get('/admin-edit', 'AdminController@edit')->name('admin-edit');
+Route::resource('admin', 'AdminController');
+
+Route::post('/admin/upload/{id}','AdminController@fileupload')->name('fileupload');
+
 Route::get('/book', 'BookController@index')->name('book');

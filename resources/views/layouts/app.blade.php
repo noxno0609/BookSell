@@ -56,7 +56,7 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="{{ route('admin') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.index') }}">
                                         {{ __('Admin Panel') }}
                                     </a>
 

@@ -5,3 +5,7 @@
 #button-admin-edit {
     float:right;
 }
+
+.pagination {
+    justify-content: center;
+ }

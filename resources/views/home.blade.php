@@ -39,5 +39,8 @@
         <?php $count=0; ?>
         @endif
 
+        <div style="text-align:center; margin: auto;">
+            {{ $books->links() }}
+        </div>
     </div>
 @endsection

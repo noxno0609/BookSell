@@ -28,4 +28,10 @@ class HomeController extends Controller
         $books = Book::paginate(9);
         return view('home', compact('books'));
     }
+
+    public function detail($id)
+    {
+        $book = Book::find($id);
+        return view('book', compact('book'));
+    }
 }

@@ -21,6 +21,11 @@ class AdminController extends Controller
         return view('admin.index', compact('books'));
     }
 
+    public function create()
+    {
+        return view('admin.create');
+    }
+    
     public function edit($id)
     {
         $book = Book::find($id);

@@ -21,10 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('admin', 'AdminController');
 
-Route::get("/home/{id}", "HomeController@detail")->name('book');
+Route::get("/book/{id}", "HomeController@detail")->name('book');
 
 Route::post('/admin/upload/{id}','AdminController@fileupload')->name('fileupload');
-
-Route::get('/book', 'BookController@index')->name('book');
 
 Route::get('/shoppingcart', 'ShoppingCartController@index')->name('shoppingcart');

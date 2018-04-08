@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
     <h3>Admin Page</h3>
-    <input class="btn btn-warning" style="margin-bottom:10px; width:100px;" type="button" value="Add" />
+    
+    <input class="btn btn-warning" style="margin-bottom:10px; width:100px;" type="button" value="Add" onclick="window.location='{{route('admin.create')}}'"/>
+
     <table class="table table-condensed">
         <thead>
         <tr>

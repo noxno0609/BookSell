@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Book;
 use Illuminate\Support\Facades\Input;
 use Storage;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,31 @@ class AdminController extends Controller
         return view('admin.create');
     }
     
+    public function store()
+    {
+        $book = new Book;
+        $book->title = Input::get('title');
+        $book->description = Input::get('description');
+        $book->author = Input::get('author');
+        $book->producer = Input::get('producer');
+        $book->price = Input::get('price');
+        $book->createduserid = Auth::user()->id;
+        $book->save();
+
+        if (Input::hasFile('bookimage'))
+        {
+            $file = Input::file('bookimage');
+
+            $filename = $book->id.'.jpg';
+
+            $file->move('uploads',$filename);
+            $book->imagename = $filename;
+            $book->save();
+        }
+
+        return redirect('admin');
+    }
+
     public function edit($id)
     {
         $book = Book::find($id);

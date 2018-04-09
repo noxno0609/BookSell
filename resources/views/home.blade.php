@@ -4,6 +4,10 @@
 @section('content')
 
     <div class="container">
+        @if($keyword != null)
+        <h3>Search Keyword: {{$keyword}}</h3>
+        @endif
+
         @foreach($books as $book)
             @if($count == 0)
             <div class="row" style="margin-bottom:30px">

@@ -5,10 +5,10 @@
         <thead>
             <tr>
                 <th style="width:10%">Thumbnail</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá </th>
-                <th>Số Lượng</th>
-                <th>Thành Tiền</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
                 <th style="width: 10%"></th>
             </tr>
             </thead>
@@ -33,7 +33,7 @@
             </tbody>
     </table>
     <div style="text-align: right;">
-        <p style="font-size:17px">Tổng Tiền: <b style="color:#b37700">{{ number_format($cart->totalPrice, 0) }} VNĐ</b></p>
+        <p style="font-size:17px">Total Price: <b style="color:#b37700">{{ number_format($cart->totalPrice, 0) }} VNĐ</b></p>
     </div>
     <div style="text-align: right;">
         <input class="btn btn-info" style="width: 16%" type="button" value="Thanh Toán"/>    

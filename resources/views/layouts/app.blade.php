@@ -36,7 +36,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <form class="input-group" action="{{route('search')}}" method="GET">
+                            <input class="form-control" type="text" name="search" placeholder="Nhập tên sản phẩm cần tìm..." style="width:300px"/>
+                            <input class="btn btn-default" type="submit" value="Search" style="margin-left:5px"/>
+                        </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
